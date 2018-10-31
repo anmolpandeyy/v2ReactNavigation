@@ -1,11 +1,18 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
 
 class WelcomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>WelcomeScreen</Text>
+        <Button
+          title="Sign In"
+          onPress={() => this.props.navigation.navigate("SignIn")}
+        />
+        <Button
+          title="Sign Up"
+          onPress={() => this.props.navigation.navigate("SignUp")}
+        />
       </View>
     );
   }
