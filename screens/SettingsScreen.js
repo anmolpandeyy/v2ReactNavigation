@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Button, AsyncStorage } from "react-native";
 
-class SignInScreen extends Component {
-  signIn = async () => {
-    await AsyncStorage.setItem("userToken", "Anmol");
+class SettingsScreen extends Component {
+  signOut = async () => {
+    AsyncStorage.clear();
     this.props.navigation.navigate("AuthLoading");
   };
 
   render() {
     return (
       <View style={styles.container}>
-        <Button title="Complete sign in" onPress={this.signIn} />
+        <Button title="Sign Out" onPress={this.signOut} />
       </View>
     );
   }
 }
-export default SignInScreen;
+export default SettingsScreen;
 
 const styles = StyleSheet.create({
   container: {
